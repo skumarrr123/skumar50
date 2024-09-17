@@ -3,6 +3,7 @@
 # SoftDev
 # Dictionaries and random selection of values
 # .3
+# 2024-09-17
 import random
 krewes = {
            4: [ 
