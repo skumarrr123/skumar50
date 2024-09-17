@@ -1,5 +1,5 @@
 # Suhana Kumar
-# K^3
+# K^3 (Suhana Kumar, Vedant Kothari, Kyle Lee)
 # SoftDev
 # Dictionaries and random selection of values
 # .3
