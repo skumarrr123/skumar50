@@ -13,12 +13,21 @@
 
   <body>
     <h1>{{ oogada }}</h1>
-    <h4>{{ boogada }}</h4>
-    <!-- random selection --!>
+    <h4>Random Occupation: {{ boogada }}</h4>
     <table>
-            {% for item in collection %}
+      <td>
+        <tr>
+          <th> occupation </th>
+          <th> percentage </th>
+          <th> link</th>
+        </tr>
+        <tbody>
+          {{ collection|safe }}  <!-- This ensures that the HTML content is rendered correctly -->
+      </tbody>
+      </td>
+            <!-- {% for item in collection %}
             {{ item }}
-            {% endfor %}
+            {% endfor %} -->
     </table>
     
   </body>
