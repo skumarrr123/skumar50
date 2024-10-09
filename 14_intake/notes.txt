@@ -9,8 +9,8 @@ DISCO:
 
 Q/C/C:
 * imports from/refers to the other python file
-* 
-* 
+* needs 'object'  username to refer to for the site to work, therefore, auth only works when a username is entered.
+* What exactly is ""***DIAG"? Why do we need these string print lines before each request
 -----------------------------------------------------------------------
 
 
