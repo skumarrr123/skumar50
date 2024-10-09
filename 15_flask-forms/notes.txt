@@ -1,0 +1,8 @@
+Team: Albania
+Roster: Endrit, Vedant, Suhana
+
+K15 - Take and Give
+
+- Primary page takes a username using POST or GET method
+- Secondary page gives that username, explanations for both methods
+- Team name and roster present on both pages
