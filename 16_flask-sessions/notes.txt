@@ -1,0 +1,2 @@
+- print(app) just runs flask
+- print(request), does it try to refer? to the url:http://127.0.0.1:5000/auth
