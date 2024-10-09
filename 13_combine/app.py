@@ -16,32 +16,67 @@ app = Flask(__name__)
 def hello_world():
     return "No hablo queso!"
 
-coll = []
 
-@app.route("/wdywtbwygp") 
+
+def readerocc():
+    with open("data/occupations.csv", "r") as file: #Don't have to close
+        csvFile = csv.reader(file)
+        info = {}
+        count = 0
+        rando_number = random.randint(0,998)
+        total = 0
+        x = ""
+        for lines in csvFile:
+            if not(count == 0):
+                info.update({lines[0]:float(lines[1])}) #Add to dictionary
+            count = count + 1
+        info.popitem()
+        return info
+def linkjobs(f):
+    with open(f, "r") as file: #Don't have to close
+        csvFile = csv.reader(file)
+        data = []
+        for lines in csvFile:
+            if lines[2] == "Link":
+                continue
+            data.append(lines[2])
+        return data
+def randomoccupation():
+    occupations = readerocc()
+    x = ""
+    rando_number = random.randint(0,998)
+    total = 0
+    count = 0
+    listoccupations = []
+    for occupation in occupations:
+        listoccupations.append(occupation)
+    for percentage in occupations.values():
+        if (total > rando_number):
+            x = listoccupations[count]
+        else:
+            total += percentage*10
+            count+=1
+    return x
+
+@app.route("/wdywtbwygp")
 def test_tmplt():
     #starts the table
-    page="<table><thead><tr><th>Occupations</th><th>Percentages</th></tr></thead><tbody>"
-    with open("occupations.csv", "r") as file:
-        next(file)
-        f = csv.reader(file)
-        dic = {}
-        for i in f:
-            dic.update({i[0]: float(i[1])})
-        total = dic["Total"]
-        key = dic.keys()
-        for k in key:
-            num = dic[k]
-            if (num / total) > random.random(): #random.random generates a float in (0, 1)
-                thing = k
-            else:
-                total -= num #Used for weighted probability; subtracts the probability from the total if the occupation is not chosen
-    for stuff in dic.keys():
-        page = page + stuff + "<br>"
-    page += "</tbody></table>"
-    return render_template('tablified.html', foo="fooooo", oogada= "combining elements of flask and html", boogada="Jonathan Metzler-Kyle Lee-Suhana Kumar - MLK", collection=coll)
+    occupations = readerocc()
+    occupationlink = linkjobs("data/occupations.csv")
+    tableoccupations = []
+    rando = randomoccupation()
+    count = 0
+    
+    for occupation, percentage, link in zip(occupations.keys(), occupations.values(), occupationlink):
+        # Create a table row for each occupation with percentage and link
+        row = f"<tr><td>{occupation}</td><td>{percentage}</td><td><a href='{link}'>{link}</a></td></tr>"
+        tableoccupations.append(row)
+        
+    return render_template('tablified.html', foo="randomTableOccupations", oogada= "Jonathan Metzler-Kyle Lee-Suhana Kumar - MLK", boogada=rando, collection=tableoccupations)
+
 
 
 if __name__ == "__main__":
     app.debug = True
     app.run()
+
