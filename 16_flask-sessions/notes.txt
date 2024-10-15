@@ -1,2 +1,7 @@
 - print(app) just runs flask
 - print(request), does it try to refer? to the url:http://127.0.0.1:5000/auth
+- can replace app.secret_key = b'qwrqwsxolwcbuytr_5#y2L"ujedcF4Qsdfastiugyhkb8z\nasdf\xecgb;lkiy]/' with app.secret_key = b'(secrets.token_hex())' to ensure that the secret key has a randomly generated 32 bit string
+- cookies is user information, like a bowl for all the user input, sent back and forth
+- session allows us to access and edit the cookie and its content
+- session on users device but its behavior is defined by us
+- 
