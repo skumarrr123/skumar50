@@ -1,0 +1,35 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: gray;
+  }
+  h2{
+    text-align:center;
+    background-color : darkgray;
+    color : white;
+    padding: 3%
+  }
+  h5{
+    color : white;
+  }
+  main{
+    display:flex;
+    align-content: flex-start;
+   
+  }
+  main article{
+    width: 68%;
+    padding: 2%;
+   
+  }
+  main aside{
+    width: 28%;
+    padding: 2%;
+    font-size: 24px;
+   
+  }
+  footer{
+    text-align: right;
+    color:gray;
+    background-color: #333333;
+  }
