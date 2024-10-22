@@ -1,0 +1,7 @@
+def reverse3(nums):
+  new = [1,1,1]
+  new[0] = nums[2]
+  new[2] = nums[0]
+  new[1] = nums[1]
+  return new
+
