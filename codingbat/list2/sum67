@@ -1,0 +1,13 @@
+def sum67(nums):
+  count =0
+  skip = False
+  for i in range(len(nums)):
+    if nums[i] == 6:
+      skip = True
+    elif skip:
+      if nums[i] == 7:
+        skip = False
+    else:
+      count += nums[i]
+  return count
+        

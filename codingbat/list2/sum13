@@ -1,0 +1,12 @@
+def sum13(nums):
+  count = 0
+  skip = False
+  for i in range(len(nums)):
+    if nums[i] == 13:
+        skip = True
+    elif skip:
+      skip = False
+    else:
+      count = count + nums[i]
+  return count
+
