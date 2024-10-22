@@ -1,28 +1,47 @@
-< your heading here >
+Suhana Kumar
+K^3 - Vedant Kothari, Kyle Lee, Suhana Kumar
+SoftDev
+K14 -- Intake
+2024-10-8
+time spent: 0.5 hrs
 
 DISCO:
-*
-* 
-* 
+* At first, the auth page was unable to load because there was no existing username in args. In order for the function with route 'auth' to run, it has to have a username in order to print "Waaaa hooo HAAAH"
+* First, we uncommented all of the tags to see which part of the code
+would throw an error. In doing so, a BadRequestKeyError is thrown
+stating that 'username' isn't a key.
+* This would suggest that args is a dictionary of request and 'username'
+is not a valid key in args.
+* We also found out that uncommenting this single line was the issue for 
+both functions, supporting our theories on the first discovery.
+* ONLY when you submit an username does the line actually work, thus meaning
+that the input was added to the args dictionary and thus produces a value for
+the key.
+* In HTML the tag form is used with action="/auth" to push the route to
+/auth after hitting submit on the home page.
+* "auth?username=sdadsa&sub1=Submit" -> the hyperlink changed to that
+when we typed in a username, "sdadsa". I think this represents a logic line,
+where if auth is validated, username should have a value and sub1 should
+equal Submit.
 -----------------------------------------------------------------------
 
 
 Q/C/C:
-* imports from/refers to the other python file
-* needs 'object'  username to refer to for the site to work, therefore, auth only works when a username is entered.
-* What exactly is ""***DIAG"? Why do we need these string print lines before each request
+* We weren't really sure what "#, methods=['GET', 'POST'])" meant as we tried
+uncommenting it to no avail. It just created a new error saying that
+it needed to be after a decorator.
+* The text below was prompted after I uncommented only the auth route function without 
+the error. I did my best to cross-correlate with each method. 
+
+* How is this information useful to us as developers? It just seems like
+blurry scrambled words and techy stuff at this point.
 -----------------------------------------------------------------------
 
 
 OTHER?
-* 
-* 
-* 
+* What is PyCache? I think cache is like the data that is temporarily 
+stored using RAM (maybe), so maybe PyCache is python's cache??
+* Request module is used for form submission.
+* Can I have multiple functions with an app.route('/'). I've always
+been curious whether or not this was possible
 -----------------------------------------------------------------------
-
-
-
-
-
-
-

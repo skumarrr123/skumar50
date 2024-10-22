@@ -16,6 +16,7 @@ def occupation():
         count = 0
         rando_number = random.randint(0, 998)
         total = 0
+
         for lines in csv_reader:
             if count == 0:
                 count += 1  # Skip the first row with headers

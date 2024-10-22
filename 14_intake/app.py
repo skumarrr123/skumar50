@@ -1,8 +1,10 @@
-# K^3 (Suhana Kumar, Vedant Kothari, Kyle Lee)
-# Suhana Kumar
+
+# Vedant Kothari
+# K^3 - Vedant Kothari, Kyle Lee, Suhana Kumar
 # SoftDev
-# <2024><10><8>
-# time spent: 0.75
+# K14 -- Intake
+# 2024-10-8
+# time spent: 0.5 hrs
 
 # import conventions:
 # list most general first (standard python library)
@@ -43,21 +45,21 @@ PROTIP: Insert your own in-line comments
 
 @app.route("/") #, methods=['GET', 'POST'])
 def disp_loginpage():
-    print("\n\n\n") #jinja2.exceptions.TemplateNotFound: login.html
-    print("***DIAG: this Flask obj ***")
-    print(app)
-    print("***DIAG: request obj ***")
-    print(request)
-    print("***DIAG: request.args ***")
-    print(request.args)
-    print("***DIAG: request.args['username']  ***")
-    #print(request.args['username']) #Only when this line is commented out does the site worked, asking for username when it doesn't exist
-    print("***DIAG: request.headers ***")
-    print(request.headers)
+#     print("\n\n\n")
+#     print("***DIAG: this Flask obj ***")
+#     print(app)
+#     print("***DIAG: request obj ***")
+#     print(request)
+#     print("***DIAG: request.args ***")
+#     print(request.args)
+#     print("***DIAG: request.args['username']  ***")
+#     print(request.args['username']) #If this line is commented it works
+#     print("***DIAG: request.headers ***")
+#     print(request.headers)
     return render_template( 'login.html' )
 
 
-@app.route("/auth") #, methods=['GET', 'POST'])
+@app.route("/auth") # , methods=['GET', 'POST'])
 def authenticate():
     print("\n\n\n")
     print("***DIAG: this Flask obj ***")
@@ -67,7 +69,7 @@ def authenticate():
     print("***DIAG: request.args ***")
     print(request.args)
     print("***DIAG: request.args['username']  ***")
-    print(request.args['username']) #Don't need to comment out because you only get to this page once you HAVE a username
+    print(request.args['username']) #if this line is not commented, auth only works when a username is submitted
     print("***DIAG: request.headers ***")
     print(request.headers)
     return "Waaaa hooo HAAAH"  #response to a form submission
