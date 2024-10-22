@@ -1,0 +1,10 @@
+def cat_dog(str):
+  catc =0 
+  dogc = 0
+  for i in range(len(str)-2):
+    if str[i:i+3] == "cat":
+      catc += 1
+    if str[i:i+3] == "dog":
+      dogc += 1
+  return dogc == catc
+
