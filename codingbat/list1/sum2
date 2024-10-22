@@ -1,0 +1,11 @@
+def sum2(nums):
+  count = 0
+  if len(nums) == 0:
+    return 0
+  if len(nums) < 2:
+    for i in range(len(nums)):
+      count += nums[i]
+  else:
+    count = nums[0] + nums[1]
+  return count 
+

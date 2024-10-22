@@ -1,0 +1,7 @@
+def rotate_left3(nums):
+  new = [1,2,3]
+  new[0] = nums[1]
+  new[1] = nums[2]
+  new[2] = nums[0]
+  return new
+
