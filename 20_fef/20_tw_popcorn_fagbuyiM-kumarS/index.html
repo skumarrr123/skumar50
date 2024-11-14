@@ -1,0 +1,47 @@
+<!doctype html>
+<!--
+Popcorn -
+SoftDev
+20
+2024-11-13
+time spent: 1 hr
+-->
+<html class ="bg-white dark:bg-black"> <!-- this makes the screen black, you coulkd also make it turn off and on by adding a bunvh of stuff-->
+<link rel="stylesheet" href="styles.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+          }
+          backdropInvert: {
+            25: '.05',
+            75: '.95',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+  </style>
+</head>
+  <body>
+    <h1 class="text-3xl font-bold underline text-pink-500">
+      Hallo world! - Popcorn
+    </h1>
+    <br>
+    <div class="h-12 grid grid-cols-1 gap-0 content-center">
+      <button class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-lg"> <!-- button thats nice when you press it-->
+        Push Me
+      </button>
+    </div>
+<div class="backdrop-invert h-40 w-40 bg-white/30">
+        <img src="15.jpg" alt="mountain to invert">
+</div>
+
+  </body>
+</html>
