@@ -4,7 +4,7 @@ Popcorn - Suhana Kumar, Moyo Fagbuyi
 SoftDev
 K22 Testing On-Ramps + Other FEFS
 2024-11-18
-time spent: .5 
+time spent: 1
 -->
 <html>
   <head>
@@ -16,7 +16,37 @@ time spent: .5
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/foundation.min.js"></script>
 
   </head>
-  <body>
-    <h1> Popcorn - Suhana Kumar, Moyo Fagbuyi</h1>
-  </body>
+    <h1>Popocorn - Suhana Kumar, Moyo Fagbuyi</h1>
+    <div class="top-bar">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">See what's happening in DUCK CITY</li>
+        <li>
+          <a href="#">Explore DUCK CITY</a>
+          <ul class="menu vertical">
+            <li><a class="hollow button" href="duck1.html">Au Man</a></li>
+            <li><a class="hollow button" href="duck2.html">Pomegranate</a></li>
+            <li><a class="hollow button" href="duck3.html">Kotik</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <br>
   
+    <a class="button" href="duck1.html"> This is alternate route to Au Man </a>
+    <a class="button tiny" href="duck2.html"> This is alternate route to Pomegranate </a>
+    <a class="button large" href="duck3.html"> This is alternate route to Kotik</a>
+    </a>
+<br>
+    <button class="hollow button" data-open="exampleModal1"> Open Map of DUCK CITY </button>
+    <div class="reveal" id="exampleModal1" data-reveal>
+      <h3> Map of DUCK City</h3>
+      <img src="dc.png" alt="dc">
+      <button class="close-button" data-close aria-label="Close modal">&times;</button>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+         $(document).foundation();
+      })
+   </script>
+</html>
