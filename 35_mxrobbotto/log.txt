@@ -1,0 +1,15 @@
+k35
+Brave Bananas
+3/12/35
+Time spent: 
+
+DISCO:
+- had to enable several settings for copilot to analyze code
+- takes a while
+
+Q/C/C:
+some areas of interest...
+q0: How many tries did it take to "get it right?"
+q1: Did you catch any errors? If so, how did you notice, and what did you do?
+q2: 
+
