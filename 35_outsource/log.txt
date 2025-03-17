@@ -1,0 +1,24 @@
+k35
+Brave Bananas
+3/12/35
+Time spent: 
+
+DISCO:
+- had to enable several settings for copilot to analyze code
+- takes a while to load
+- had many mistakes, but was able to revise them once prompted, did not break on itself
+- issues with flash messages, orginally not display them, then displayed on web page as opposed to as a pop down message
+- delays with presentation of flash messsages
+- no css/design elements
+- can retrieve previous versions of code, since copilot automatically re-writes code
+- each file has a different amount of versions as they can be updated seperately
+
+Q/C/C:
+some areas of interest...
+q0: How many tries did it take to "get it right?"
+
+q1: Did you catch any errors? If so, how did you notice, and what did you do?
+Yes many, after each error we prompted the chat box by pasting the errors and asking it to fix the changes
+
+q2: 
+

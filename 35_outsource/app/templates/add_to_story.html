@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add to Story</title>
+</head>
+<body>
+    <h1>Add to Story</h1>
+    <p>Latest update: {{ latest_contribution['content'] }}</p>
+    <form method="POST">
+        <label for="content">Your Contribution:</label>
+        <textarea id="content" name="content" required></textarea>
+        <br>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
