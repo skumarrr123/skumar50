@@ -1,0 +1,11 @@
+ZealousZebras: Anastasia, Suhana, Chris, Dua
+SoftDev
+K37 -- deploy a persistent website from virtual machine
+2025-03-20
+Time Spent: 4 hours
+
+1. Split into two groups of two (Suhana and Anastasia, Chris and Dua)
+2. Install Nginx
+Note: Anastasia is provisioning a domain name; Suhana, Chris, and Dua are not
+3. Follow the guide given on Suhana's droplet while Anastasia is the scribe
+4. Repeat what works on Anastasia's droplet

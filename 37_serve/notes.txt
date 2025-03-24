@@ -1,0 +1,100 @@
+ZealousZebras: Anastasia, Suhana, Chris, Dua
+SoftDev
+K37 -- deploy a persistent website from virtual machine
+2025-03-20
+Time Spent: 4 hours
+
+DISCO:
+- the domain name includes the extension (.com, .me, .tech, etc)
+- in order to route the domain name to an IP address, need to manage DNS on the registrar (e.g. Namecheap), not just DigitalOcean
+    - no duplicate host names
+    - type "A Record"
+- don't set up server blocks on domain name; resulted in conflicting server name warning
+- http is different from https
+
+Commands:
+sudo apt update
+sudo apt upgrade
+sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools
+sudo apt install python3-venv
+mkdir ~/myproject
+cd ~/myproject
+python3.10 -m venv myprojectenv
+source myprojectenv/bin/activate
+pip install wheel
+pip install uwsgi flask
+nano ~/myproject/myproject.py
+    in file: 
+    from flask import Flask
+    app = Flask(__name__)
+
+    @app.route("/")
+    def hello():
+        return "<h1 style='color:blue'>Hello There!</h1>"
+
+    if __name__ == "__main__":
+        app.run(host='0.0.0.0')
+sudo ufw allow 5000
+python myproject.py
+visit http://your_server_ip:5000
+nano ~/myproject/wsgi.py
+    in file:
+    from myproject import app
+
+    if __name__ == "__main__":
+        app.run()
+uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi:app
+visit http://your_server_ip:5000
+deactivate
+nano ~/myproject/myproject.ini
+    in file:
+    [uwsgi]
+    module = wsgi:app
+
+    master = true
+    processes = 5
+
+    socket = myproject.sock
+    chmod-socket = 660
+    vacuum = true
+
+    die-on-term = true
+sudo nano /etc/systemd/system/myproject.service
+    in file:
+    [Unit]
+    Description=uWSGI instance to serve myproject
+    After=network.target
+
+    [Service]
+    User=sammy
+    Group=www-data
+    WorkingDirectory=/home/sammy/myproject
+    Environment="PATH=/home/sammy/myproject/myprojectenv/bin"
+    ExecStart=/home/sammy/myproject/myprojectenv/bin/uwsgi --ini myproject.ini
+
+    [Install]
+    WantedBy=multi-user.target
+sudo chgrp www-data /home/nonroot
+sudo systemctl start myproject
+sudo systemctl enable myproject
+sudo systemctl status myproject
+sudo nano /etc/nginx/sites-available/myproject
+    in file:
+    server {
+        listen 80;
+        server_name alee51.me www.alee51.me;
+
+        location / {
+            include uwsgi_params;
+            uwsgi_pass unix:/home/nonroot/myproject/myproject.sock;
+        }
+    }
+sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+sudo unlink /etc/nginx/sites-enabled/default
+sudo nginx -t
+sudo systemctl restart nginx
+sudo ufw delete allow 5000
+sudo ufw allow 'Nginx Full'
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx -d alee51.me -d www.alee51.me
+sudo ufw delete allow 'Nginx HTTP'
